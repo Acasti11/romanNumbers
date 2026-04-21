@@ -16,4 +16,8 @@ describe('function convertToRomanNumber',()=>{
     test('cuando number sea 4 devuelve IV',()=>{
         expect(convertToRomanNumber(4)).toBe('IV');
     });
+
+    test('cuando number sea 5 devuelve V',()=>{
+        expect(convertToRomanNumber(5)).toBe('V');
+    });
 });
