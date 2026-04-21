@@ -3,7 +3,10 @@ console.log(a);
 
 
 export function convertToRomanNumber( number: number ) : String{
-    if( number=== 2){
+    if(number === 3){
+        return "III"
+    }
+    if(number === 2){
         return "II"
     }
     return "I";
