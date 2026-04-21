@@ -32,4 +32,8 @@ describe('function convertToRomanNumber',()=>{
     test('cuando number sea 10 devuelve X',()=>{
         expect(convertToRomanNumber(10)).toBe('X');
     });
+
+    test('cuando number sea 11 devuelve XI',()=>{
+        expect(convertToRomanNumber(11)).toBe('XI');
+    });
 });
