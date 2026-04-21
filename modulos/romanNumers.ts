@@ -12,6 +12,9 @@ export function añadirPalito( numb :number) : String{
 }
 
 export function convertToRomanNumber( number: number ) : String{
+    if (number === 4) {
+        return "IV";
+    }
     return añadirPalito(number);
 }
 
