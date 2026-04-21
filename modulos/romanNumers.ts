@@ -15,6 +15,9 @@ export function convertToRomanNumber( number: number ) : String{
     if (number === 4) {
         return "IV";
     }
+    if (number === 5) {
+        return "V";
+    }
     return añadirPalito(number);
 }
 
