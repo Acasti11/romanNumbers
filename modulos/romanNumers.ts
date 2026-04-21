@@ -1,26 +1,35 @@
 const a : String = "Hello world"
 console.log(a);
 
-export function añadirPalito( numb :number) : String{
+export function añadirCaracter( carac:string,numb :number) : string{
     let b : string="";
 
-    for(let x=0; x <numb;x++){
-        b = b.concat("I");
+    for(let x=1; x <= numb;x++){
+        b = b.concat(carac);
     }
-    
+
+    console.log(b);
     return b;
 }
 
-export function convertToRomanNumber( number: number ) : String{
-    if (number === 4) {
-        return "IV";
+export function convertToRomanNumber( number: number ) : string{
+    const resto :number= number%5;
+    const cociente :number=(number/5)
+    console.log(cociente);
+
+    let roman :string="";
+    
+    if(resto !=4){
+        roman = roman.concat(añadirCaracter('V',cociente));
+        roman = roman.concat(añadirCaracter('I',resto));
     }
-    if (number === 5) {
-        return "V";
+    if(resto == 4){ 
+        roman = roman.concat(añadirCaracter('I',1));
+        roman = roman.concat(añadirCaracter('V',1));
     }
-    if (number === 6) {
-        return "VI";
-    }
-    return añadirPalito(number);
+
+    return roman;
 }
+
+convertToRomanNumber(3);
 
