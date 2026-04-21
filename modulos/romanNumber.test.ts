@@ -28,4 +28,8 @@ describe('function convertToRomanNumber',()=>{
     test('cuando number sea 9 devuelve IX',()=>{
         expect(convertToRomanNumber(9)).toBe('IX');
     });
+
+    test('cuando number sea 10 devuelve X',()=>{
+        expect(convertToRomanNumber(10)).toBe('X');
+    });
 });
