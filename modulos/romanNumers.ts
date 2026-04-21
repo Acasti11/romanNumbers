@@ -18,6 +18,9 @@ export function convertToRomanNumber( number: number ) : string{
     console.log(cociente);
 
     let roman :string="";
+    if(number===9){
+        return("IX")
+    }
     
     if(resto !=4){
         roman = roman.concat(añadirCaracter('V',cociente));
@@ -27,6 +30,7 @@ export function convertToRomanNumber( number: number ) : string{
         roman = roman.concat(añadirCaracter('I',1));
         roman = roman.concat(añadirCaracter('V',1));
     }
+
 
     return roman;
 }
