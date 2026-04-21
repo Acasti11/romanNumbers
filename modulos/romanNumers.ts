@@ -7,4 +7,4 @@ export function convertToRomanNumber( number: number ) : String{
         return "II"
     }
     return "I";
-} 
+}
