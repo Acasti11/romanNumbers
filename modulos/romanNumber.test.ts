@@ -20,4 +20,8 @@ describe('function convertToRomanNumber',()=>{
     test('cuando number sea 5 devuelve V',()=>{
         expect(convertToRomanNumber(5)).toBe('V');
     });
+
+    test('cuando number sea 6 devuelve VI',()=>{
+        expect(convertToRomanNumber(6)).toBe('VI');
+    });
 });
