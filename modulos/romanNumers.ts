@@ -24,7 +24,9 @@ export function convertToRomanNumber( number: number ) : string{
     if(number===10){
         return("X");
     }
-    
+    if(number===11){
+        return("XI");
+    }
     if(resto !=4){
         roman = roman.concat(añadirCaracter('V',cociente));
         roman = roman.concat(añadirCaracter('I',resto));
