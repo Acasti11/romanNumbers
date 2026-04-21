@@ -14,12 +14,15 @@ export function añadirCaracter( carac:string,numb :number) : string{
 
 export function convertToRomanNumber( number: number ) : string{
     const resto :number= number%5;
-    const cociente :number=(number/5)
+    const cociente :number=(number/5);
     console.log(cociente);
 
     let roman :string="";
     if(number===9){
-        return("IX")
+        return("IX");
+    }
+    if(number===10){
+        return("X");
     }
     
     if(resto !=4){
