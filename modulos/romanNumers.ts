@@ -13,30 +13,31 @@ export function añadirCaracter( carac:string,numb :number) : string{
 }
 
 export function convertToRomanNumber( number: number ) : string{
-    const resto :number= number%5;
-    const cociente :number=(number/5);
+    let resto :number= number%10;
+    let cociente :number=(number/10);
     console.log(cociente);
 
     let roman :string="";
-    if(number===9){
-        return("IX");
+    if(resto == 9){ 
+        roman = roman.concat(añadirCaracter('I',1));
+        roman = roman.concat(añadirCaracter('X',1));
     }
-    if(number===10){
-        return("X");
+    if(resto !=9){
+        roman = roman.concat(añadirCaracter('X',cociente));
+        return roman;
     }
-    if(number===11){
-        return("XI");
-    }
-    if(resto !=4){
-        roman = roman.concat(añadirCaracter('V',cociente));
-        roman = roman.concat(añadirCaracter('I',resto));
-    }
-    if(resto == 4){ 
+    cociente =(resto/5);
+    resto = resto %5;
+        if(resto == 4){ 
         roman = roman.concat(añadirCaracter('I',1));
         roman = roman.concat(añadirCaracter('V',1));
-    }
-
-
+        }
+        if(resto !=4){
+        roman = roman.concat(añadirCaracter('V',cociente));
+        return roman;
+        }
+    
+    roman = roman.concat(añadirCaracter('I',resto));
     return roman;
 }
 
