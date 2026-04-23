@@ -1,6 +1,3 @@
-const a : String = "Hello world"
-console.log(a);
-
 export function añadirCaracter( carac:string,numb :number) : string{
     let b : string="";
 
@@ -12,43 +9,59 @@ export function añadirCaracter( carac:string,numb :number) : string{
     return b;
 }
 
-export function convertToRomanNumber( number: number ) : string{
-    let resto :number= number%50;
-    let cociente :number=(number/50);
-    console.log(cociente);
-
-    let roman :string="";
-    if(resto == 49){ 
-        roman = roman.concat(añadirCaracter('I',1));
-        roman = roman.concat(añadirCaracter('L',1));
-        return roman;
+export function devuelveDosOCinco(toggle :boolean){
+    if(toggle){
+        return 2;
     }
-    if(resto !=49){
-        roman = roman.concat(añadirCaracter('L',cociente));
-    }
-    cociente =(resto/10);
-    resto = resto %10;
-    if(resto == 9){ 
-        roman = roman.concat(añadirCaracter('I',1));
-        roman = roman.concat(añadirCaracter('X',1));
-        return roman;
-    }
-    if(resto !=9){
-        roman = roman.concat(añadirCaracter('X',cociente));
-    }
-    cociente =(resto/5);
-    resto = resto %5;
-        if(resto == 4){ 
-        roman = roman.concat(añadirCaracter('I',1));
-        roman = roman.concat(añadirCaracter('V',1));
-        return roman;
-        }
-        if(resto !=4){
-        roman = roman.concat(añadirCaracter('V',cociente));
-        }
-    roman = roman.concat(añadirCaracter('I',resto));
-    return roman;
+    return 5;
 }
 
-convertToRomanNumber(3);
+export function parseToRoman(numb :number):string{
+    let result:string="";
+    switch(numb){
+        case 5:
+            result='V';
+            break;
+        case 10:
+            result='X';
+            break;
+        case 50:
+            result='L';
+            break;
+    }
+    return result;
+}
 
+export function convertToRomanNumber( number: number ) : string{
+    let divisor :number=50;
+    let toggle : boolean=false;
+    let resto :number= number;
+    let cociente :number=(number/divisor);
+    console.log(cociente);
+    let roman :string="";
+
+    while(resto!=0){
+        resto=resto%divisor;
+        if(resto == divisor-1){ 
+            roman = roman.concat(añadirCaracter('I',1));
+            roman = roman.concat(añadirCaracter(parseToRoman(divisor),1));
+            return roman;
+        }
+        else{
+            roman = roman.concat(añadirCaracter(parseToRoman(divisor),cociente));
+        }
+        if(resto<=3){
+            roman = roman.concat(añadirCaracter('I',resto));
+            resto=0;
+        }
+        divisor=divisor/devuelveDosOCinco(toggle);
+        cociente =(resto/divisor);
+        if(toggle){
+            toggle=false
+        }else{
+            toggle=true;
+        }
+    }
+    
+    return roman;
+}
