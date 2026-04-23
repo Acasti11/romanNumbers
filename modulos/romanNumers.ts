@@ -18,6 +18,9 @@ export function convertToRomanNumber( number: number ) : string{
     console.log(cociente);
 
     let roman :string="";
+    if(number===50){
+        return 'L';
+    }
     if(resto == 9){ 
         roman = roman.concat(añadirCaracter('I',1));
         roman = roman.concat(añadirCaracter('X',1));
