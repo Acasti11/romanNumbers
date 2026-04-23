@@ -13,20 +13,21 @@ export function añadirCaracter( carac:string,numb :number) : string{
 }
 
 export function convertToRomanNumber( number: number ) : string{
-    let resto :number= number%10;
-    let cociente :number=(number/10);
+    let resto :number= number%50;
+    let cociente :number=(number/50);
     console.log(cociente);
 
     let roman :string="";
-    if(number===50){
-        return 'L';
+    if(resto == 49){ 
+        roman = roman.concat(añadirCaracter('I',1));
+        roman = roman.concat(añadirCaracter('L',1));
+        return roman;
     }
-    if(number===49){
-        return 'IL';
+    if(resto !=49){
+        roman = roman.concat(añadirCaracter('L',cociente));
     }
-    if(number===51){
-        return 'LI';
-    }
+    cociente =(resto/10);
+    resto = resto %10;
     if(resto == 9){ 
         roman = roman.concat(añadirCaracter('I',1));
         roman = roman.concat(añadirCaracter('X',1));
