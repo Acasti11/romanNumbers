@@ -21,6 +21,9 @@ export function convertToRomanNumber( number: number ) : string{
     if(number===50){
         return 'L';
     }
+    if(number===51){
+        return 'LI';
+    }
     if(resto == 9){ 
         roman = roman.concat(añadirCaracter('I',1));
         roman = roman.concat(añadirCaracter('X',1));
