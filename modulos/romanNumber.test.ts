@@ -46,4 +46,10 @@ describe('function convertToRomanNumber',()=>{
         expect(convertToRomanNumber(650)).toBe('DCL');
         expect(convertToRomanNumber(400)).toBe('CD');
     });
+        test('debe funcionar corectamente entre 1000 y 4000',()=>{ // debe devolver de el cociente de 5 en Vs
+        expect(convertToRomanNumber(1000)).toBe('M');
+        expect(convertToRomanNumber(1001)).toBe('MI');
+        expect(convertToRomanNumber(1500)).toBe('MD');
+        expect(convertToRomanNumber(900)).toBe('CM');
+    });
 });
