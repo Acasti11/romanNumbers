@@ -26,11 +26,17 @@ describe('function convertToRomanNumber',()=>{
         expect(convertToRomanNumber(47)).toBe('XLVII');
     });
 
-        test('debe funcionar corectamente entre 50 y 99',()=>{ // debe devolver de el cociente de 5 en Vs
+        test('debe funcionar corectamente entre 50 y 89',()=>{ // debe devolver de el cociente de 5 en Vs
         expect(convertToRomanNumber(50)).toBe('L');
         expect(convertToRomanNumber(55)).toBe('LV');
         expect(convertToRomanNumber(70)).toBe('LXX');
         expect(convertToRomanNumber(87)).toBe('LXXXVII');
+
     });
 
+      test('debe funcionar corectamente entre 100 y 390',()=>{ // debe devolver de el cociente de 5 en Vs
+        expect(convertToRomanNumber(100)).toBe('C');
+        expect(convertToRomanNumber(101)).toBe('C');
+        expect(convertToRomanNumber(150)).toBe('CL');
+        expect(convertToRomanNumber(90)).toBe('XC');
 });
