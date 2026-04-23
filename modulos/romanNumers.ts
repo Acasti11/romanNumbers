@@ -34,13 +34,16 @@ export function parseToRoman(numb :number):string{
         case 500:
             result='D';
             break;
+        case 1000:
+            result='M';
+            break;
     }
     return result;
 }
 
 export function convertToRomanNumber( number: number ) : string{
-    let divisor :number=500;
-    let toggle : boolean=false;
+    let divisor :number=1000;
+    let toggle : boolean=true;
     let resto :number= number;
     let cociente :number=(number/divisor);
     let roman :string="";
