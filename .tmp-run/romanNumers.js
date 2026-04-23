@@ -30,12 +30,15 @@ function parseToRoman(numb) {
         case 50:
             result = 'L';
             break;
+        case 100:
+            result = 'C';
+            break;
     }
     return result;
 }
 function convertToRomanNumber(number) {
-    let divisor = 50;
-    let toggle = false;
+    let divisor = 100;
+    let toggle = true;
     let resto = number;
     let cociente = (number / divisor);
     let roman = "";
@@ -47,7 +50,7 @@ function convertToRomanNumber(number) {
             return roman;
         }
         if (Math.trunc(resto / 10) == (divisor / 10) - 1 && Math.trunc(resto / 10) != 0) {
-            roman = roman.concat(añadirCaracter('X', 1));
+            roman = roman.concat(añadirCaracter(parseToRoman(divisor / devuelveDosOCinco(toggle)), 1));
             console.log(resto);
             roman = roman.concat(añadirCaracter(parseToRoman(divisor), 1));
             resto = resto - ((divisor / 10) - 1) * 10;

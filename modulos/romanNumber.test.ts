@@ -34,9 +34,16 @@ describe('function convertToRomanNumber',()=>{
 
     });
 
-      test('debe funcionar corectamente entre 100 y 390',()=>{ // debe devolver de el cociente de 5 en Vs
+    test('debe funcionar corectamente entre 100 y 390',()=>{ // debe devolver de el cociente de 5 en Vs
         expect(convertToRomanNumber(100)).toBe('C');
-        expect(convertToRomanNumber(101)).toBe('C');
+        expect(convertToRomanNumber(101)).toBe('CI');
         expect(convertToRomanNumber(150)).toBe('CL');
         expect(convertToRomanNumber(90)).toBe('XC');
+    });
+       test('debe funcionar corectamente entre 500 y 900',()=>{ // debe devolver de el cociente de 5 en Vs
+        expect(convertToRomanNumber(500)).toBe('D');
+        expect(convertToRomanNumber(501)).toBe('DI');
+        expect(convertToRomanNumber(650)).toBe('DCL');
+        expect(convertToRomanNumber(400)).toBe('CD');
+    });
 });
