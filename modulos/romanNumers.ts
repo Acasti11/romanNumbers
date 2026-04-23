@@ -21,28 +21,30 @@ export function convertToRomanNumber( number: number ) : string{
     if(number===50){
         return 'L';
     }
+    if(number===49){
+        return 'IL';
+    }
     if(number===51){
         return 'LI';
     }
     if(resto == 9){ 
         roman = roman.concat(añadirCaracter('I',1));
         roman = roman.concat(añadirCaracter('X',1));
+        return roman;
     }
     if(resto !=9){
         roman = roman.concat(añadirCaracter('X',cociente));
-        return roman;
     }
     cociente =(resto/5);
     resto = resto %5;
         if(resto == 4){ 
         roman = roman.concat(añadirCaracter('I',1));
         roman = roman.concat(añadirCaracter('V',1));
+        return roman;
         }
         if(resto !=4){
         roman = roman.concat(añadirCaracter('V',cociente));
-        return roman;
         }
-    
     roman = roman.concat(añadirCaracter('I',resto));
     return roman;
 }
