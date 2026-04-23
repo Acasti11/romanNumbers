@@ -31,13 +31,16 @@ export function parseToRoman(numb :number):string{
         case 100:
             result='C';
             break;
+        case 500:
+            result='D';
+            break;
     }
     return result;
 }
 
 export function convertToRomanNumber( number: number ) : string{
-    let divisor :number=100;
-    let toggle : boolean=true;
+    let divisor :number=500;
+    let toggle : boolean=false;
     let resto :number= number;
     let cociente :number=(number/divisor);
     let roman :string="";
@@ -56,11 +59,11 @@ export function convertToRomanNumber( number: number ) : string{
             resto=resto-((divisor/10)-1)*10;
             console.log(resto);
         }
-        if(Math.trunc(resto/100) == (divisor/100)-1 && Math.trunc(resto/10)!=0){ 
+        if(Math.trunc(resto/100) == (divisor/100)-1 && Math.trunc(resto/100)!=0){ 
             roman = roman.concat(añadirCaracter('C',1));
             console.log(resto);
             roman = roman.concat(añadirCaracter(parseToRoman(divisor),1));
-            resto=resto-((divisor/10)-1)*10;
+            resto=resto-((divisor/100)-1)*100;
             console.log(resto);
         }else{
             console.log(cociente);
