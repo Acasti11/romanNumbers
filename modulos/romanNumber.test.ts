@@ -44,4 +44,7 @@ describe('function convertToRomanNumber',()=>{
     test('cuando number sea 50 devuelve L',()=>{
         expect(convertToRomanNumber(50)).toBe('L');
     });
+        test('cuando number sea 51 devuelve LI',()=>{
+        expect(convertToRomanNumber(51)).toBe('LI');
+    });
 });
