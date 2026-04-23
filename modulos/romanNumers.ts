@@ -37,7 +37,6 @@ export function convertToRomanNumber( number: number ) : string{
     let toggle : boolean=false;
     let resto :number= number;
     let cociente :number=(number/divisor);
-    console.log(cociente);
     let roman :string="";
 
     while(resto!=0){
@@ -47,7 +46,14 @@ export function convertToRomanNumber( number: number ) : string{
             roman = roman.concat(añadirCaracter(parseToRoman(divisor),1));
             return roman;
         }
-        else{
+        if(Math.trunc(resto/10) == (divisor/10)-1 && Math.trunc(resto/10)!=0){ 
+            roman = roman.concat(añadirCaracter('X',1));
+            console.log(resto);
+            roman = roman.concat(añadirCaracter(parseToRoman(divisor),1));
+            resto=resto-((divisor/10)-1)*10;
+            console.log(resto);
+        }else{
+            console.log(cociente);
             roman = roman.concat(añadirCaracter(parseToRoman(divisor),cociente));
         }
         if(resto<=3){
@@ -63,5 +69,8 @@ export function convertToRomanNumber( number: number ) : string{
         }
     }
     
+    console.log(roman);
     return roman;
 }
+
+convertToRomanNumber(47);

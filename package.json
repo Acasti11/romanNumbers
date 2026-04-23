@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "run": "tsc --ignoreConfig modulos/romanNumers.ts --module commonjs --target es2020 --sourceMap --outDir .tmp-run && node --enable-source-maps .tmp-run/romanNumers.js"
   },
   "repository": {
     "type": "git",
