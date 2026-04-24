@@ -7,10 +7,22 @@ describe('function convertToRomanNumber',()=>{
         expect(convertToRomanNumber(3)).toBe('III');
     });
 
-    test('debe funcionar corectamente con excepciones',()=>{
+
+    test('debe funcionar corectamente con excepciones de UNO menos que la siguiente letra',()=>{
         expect(convertToRomanNumber(4)).toBe('IV');
         expect(convertToRomanNumber(9)).toBe('IX');
         expect(convertToRomanNumber(49)).toBe('IL');
+    });
+
+    test('debe funcionar corectamente con excepciones de DIEZ menos que la siguiente letra',()=>{
+        expect(convertToRomanNumber(90)).toBe('XC');
+        expect(convertToRomanNumber(490)).toBe('XD');
+        expect(convertToRomanNumber(990)).toBe('XM');
+    });
+
+    test('debe funcionar corectamente con excepciones de CIEN menos que la siguiente letra',()=>{
+        expect(convertToRomanNumber(400)).toBe('CD');
+        expect(convertToRomanNumber(900)).toBe('CM');
     });
 
     test('debe funcionar corectamente entre 5 y 9',()=>{ // debe devolver de el cociente de 5 en Vs
@@ -19,37 +31,34 @@ describe('function convertToRomanNumber',()=>{
         expect(convertToRomanNumber(8)).toBe('VIII');
     });
 
-        test('debe funcionar corectamente entre 10 y 49',()=>{ // debe devolver de el cociente de 5 en Vs
+    test('debe funcionar corectamente entre 10 y 49',()=>{ 
         expect(convertToRomanNumber(10)).toBe('X');
         expect(convertToRomanNumber(15)).toBe('XV');
         expect(convertToRomanNumber(20)).toBe('XX');
         expect(convertToRomanNumber(47)).toBe('XLVII');
     });
 
-        test('debe funcionar corectamente entre 50 y 89',()=>{ // debe devolver de el cociente de 5 en Vs
+    test('debe funcionar corectamente entre 50 y 89',()=>{ 
         expect(convertToRomanNumber(50)).toBe('L');
         expect(convertToRomanNumber(55)).toBe('LV');
         expect(convertToRomanNumber(70)).toBe('LXX');
         expect(convertToRomanNumber(87)).toBe('LXXXVII');
-
     });
 
-    test('debe funcionar corectamente entre 100 y 390',()=>{ // debe devolver de el cociente de 5 en Vs
+    test('debe funcionar corectamente entre 90 y 399',()=>{
         expect(convertToRomanNumber(100)).toBe('C');
         expect(convertToRomanNumber(101)).toBe('CI');
         expect(convertToRomanNumber(150)).toBe('CL');
-        expect(convertToRomanNumber(90)).toBe('XC');
     });
-       test('debe funcionar corectamente entre 500 y 900',()=>{ // debe devolver de el cociente de 5 en Vs
+
+    test('debe funcionar corectamente entre 500 y 899',()=>{ 
         expect(convertToRomanNumber(500)).toBe('D');
         expect(convertToRomanNumber(501)).toBe('DI');
         expect(convertToRomanNumber(650)).toBe('DCL');
-        expect(convertToRomanNumber(400)).toBe('CD');
     });
-        test('debe funcionar corectamente entre 1000 y 4000',()=>{ // debe devolver de el cociente de 5 en Vs
+        test('debe funcionar corectamente entre 1000 y 3999',()=>{ 
         expect(convertToRomanNumber(1000)).toBe('M');
         expect(convertToRomanNumber(1001)).toBe('MI');
         expect(convertToRomanNumber(1500)).toBe('MD');
-        expect(convertToRomanNumber(900)).toBe('CM');
     });
 });
